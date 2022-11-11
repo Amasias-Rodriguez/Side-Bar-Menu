@@ -122,7 +122,7 @@ body{
     width: 20px;
     height: 20px;
     background: transparent;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
     box-shadow: 6px -3px 0 3px var(--bg);
     transform: scale(0);
     transform-origin: bottom right;
@@ -137,7 +137,7 @@ body{
 .navigation ul li a{
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     text-align: center;
@@ -155,4 +155,60 @@ body{
     font-size: 1.75em;
     line-height: 60px;
     border: 6px solid transparent;
+    transition: 0.5s;
+}
+
+.navigation ul li.active a .icon{
+    color: #fff;
+    background: var(--bg);
+}
+
+.navigation ul li a .icon::before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navigation ul li.active a .icon::before{
+    opacity: 0.5s;
+}
+
+.navigation ul li a .icon::after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -60px;
+    width: 15px;
+    height: 15px;
+    background: var(--bg);
+    border: 8px solid var(--bg);
+    border-radius: 50%;
+}
+
+.navigation ul li a .text{
+    position: relative;
+    padding: 0 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.navigation.active ul li a .text{
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation ul li.active a .text{
+    color: #fff;
 }
