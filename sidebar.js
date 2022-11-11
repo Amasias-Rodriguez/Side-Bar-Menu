@@ -11,4 +11,4 @@ function activeLink(){
     this.classList.add('active');
 }
 list.forEach((item) =>
-item.addEventListener('click', activeLink));
+item.addEventListener('click',activeLink));
