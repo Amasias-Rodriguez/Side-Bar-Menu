@@ -6,7 +6,7 @@ menuToggle.onclick = function(){
 
 let list = document.querySelectorAll('.list');
 function activeLink(){
-    list.forEach((list) =>
+    list.forEach((item) =>
     item.classList.remove('active'));
     this.classList.add('active');
 }
